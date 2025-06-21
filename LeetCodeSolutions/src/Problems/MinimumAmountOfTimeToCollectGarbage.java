@@ -6,8 +6,7 @@ public class MinimumAmountOfTimeToCollectGarbage {
         int count = 0;
         int lastM = 0, lastG = 0, lastP = 0; 
 
-        for(int i=0; i<garbage.length; i++) {
-
+        for(int i=0; i<garbage.length; i++) { 
             count += garbage[i].length();
 
             if(garbage[i].contains("P")) lastP = i;

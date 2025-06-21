@@ -4,7 +4,7 @@ public class MinimumAmountOfTimeToCollectGarbage {
 	
     public int garbageCollection(String[] garbage, int[] travel) {
         int count = 0;
-        int lastM = 0, lastG = 0, lastP = 0; 
+        int lastM = 0, lastG = 0, lastP = 0;
 
         for(int i=0; i<garbage.length; i++) { 
             count += garbage[i].length();

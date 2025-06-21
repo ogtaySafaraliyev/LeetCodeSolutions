@@ -12,7 +12,7 @@ public class MinimumAmountOfTimeToCollectGarbage {
             if(garbage[i].contains("P")) lastP = i;
             if(garbage[i].contains("G")) lastG = i;
             if(garbage[i].contains("M")) lastM = i;            
-        }    
+        } 
 
         int[] pref = new int[garbage.length];
         for(int i=1; i<garbage.length; i++) {

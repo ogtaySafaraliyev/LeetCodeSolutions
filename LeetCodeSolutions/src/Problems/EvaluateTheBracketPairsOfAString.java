@@ -19,7 +19,7 @@ public class EvaluateTheBracketPairsOfAString {
                 }
                 String key = s.substring(i + 1, j);
                 result.append(map.getOrDefault(key, "?"));
-                i = j + 1; // move past ')' 
+                i = j + 1; // move past ')'
             } else {
                 result.append(s.charAt(i));
                 i++;

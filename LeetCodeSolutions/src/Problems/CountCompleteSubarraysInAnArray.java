@@ -14,7 +14,7 @@ public class CountCompleteSubarraysInAnArray {
 
         HashMap<Integer, Integer> hshMap = new HashMap<>();
         int left = 0;
-        int right = 0;
+        int right = 0; 
         while(right < len) {
             hshMap.put(nums[right], hshMap.getOrDefault(nums[right], 0) + 1);
             

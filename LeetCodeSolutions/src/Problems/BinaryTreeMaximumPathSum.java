@@ -31,7 +31,8 @@ public class BinaryTreeMaximumPathSum {
 		private int dfs(TreeNode node) {
 			if (node == null)
 				return 0;
-
+			
+			//Dynamic programming part
 			int left = Math.max(0, dfs(node.left));
 			int right = Math.max(0, dfs(node.right));
 

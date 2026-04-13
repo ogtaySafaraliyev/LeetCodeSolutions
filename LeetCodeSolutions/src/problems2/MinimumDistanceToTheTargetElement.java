@@ -1,4 +1,4 @@
-package Math;
+package problems2;
 
 public class MinimumDistanceToTheTargetElement {
     public int getMinDistance(int[] nums, int target, int start) {        

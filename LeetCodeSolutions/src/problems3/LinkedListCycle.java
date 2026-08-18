@@ -1,4 +1,5 @@
 package problems3;
+import java.util.*;
 
 public class LinkedListCycle {
 	class ListNode {

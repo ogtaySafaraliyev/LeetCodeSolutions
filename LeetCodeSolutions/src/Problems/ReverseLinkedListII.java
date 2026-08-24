@@ -51,37 +51,64 @@ public class ReverseLinkedListII {
 
 		// }
 
+//		public ListNode reverseBetween(ListNode head, int left, int right) {
+//			List<Integer> list = new ArrayList<>();
+//
+//			ListNode current = head;
+//			while (current != null) {
+//				list.add(current.val);
+//				current = current.next;
+//			}
+//
+//			List<Integer> rangeList = new ArrayList<>();
+//			for (int i = left - 1; i < right; i++) {
+//				rangeList.add(list.get(i));
+//			}
+//
+//			Collections.reverse(rangeList);
+//			int j = 0;
+//			for (int i = left - 1; i < right; i++) {
+//
+//				list.set(i, rangeList.get(j));
+//				j++;
+//			}
+//
+//			ListNode dummy = new ListNode();
+//			ListNode tail = dummy;
+//
+//			for (int num : list) {
+//				tail.next = new ListNode(num);
+//				tail = tail.next;
+//			}
+//			return dummy.next;
+//
+//		}
+		
 		public ListNode reverseBetween(ListNode head, int left, int right) {
-			List<Integer> list = new ArrayList<>();
+	        int i = 1;
+	        ListNode curr1 = head;
+	        while(i < left) {
+	            curr1 = curr1.next;
+	            i++;            
+	        }
 
-			ListNode current = head;
-			while (current != null) {
-				list.add(current.val);
-				current = current.next;
-			}
+	        Deque<Integer> stack = new ArrayDeque<>();
 
-			List<Integer> rangeList = new ArrayList<>();
-			for (int i = left - 1; i < right; i++) {
-				rangeList.add(list.get(i));
-			}
+	        ListNode curr2 = curr1;
+	        while(i <= right) {
+	            stack.push(curr2.val);
+	            curr2 = curr2.next;            
+	            i++;
+	        }
 
-			Collections.reverse(rangeList);
-			int j = 0;
-			for (int i = left - 1; i < right; i++) {
+	        curr2 = curr1;
+	        while(!stack.isEmpty()) {
+	            curr2.val = stack.pop();
+	            curr2 = curr2.next;
+	        }
 
-				list.set(i, rangeList.get(j));
-				j++;
-			}
+	        return head;
 
-			ListNode dummy = new ListNode();
-			ListNode tail = dummy;
-
-			for (int num : list) {
-				tail.next = new ListNode(num);
-				tail = tail.next;
-			}
-			return dummy.next;
-
-		}
+	    }
 	}
 }

@@ -1,0 +1,20 @@
+package problems3;
+import java.util.*;
+
+public class CreateGridWithExactlyOnePath {
+	public String[] createGrid(int m, int n) {
+        String[] ans = new String[m];
+
+        for(int i = 0; i < m; i++) {
+            char[] row = new char[n];
+
+            Arrays.fill(row, '#');
+
+            if (i == 0) Arrays.fill(row, '.');   // whole first row
+            row[n - 1] = '.';                    // last column
+
+            ans[i] = new String(row);
+        }
+        return ans;
+    }
+}
